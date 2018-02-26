@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Bellefair">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        select {
+            width: 30%;
+        }
+        
+        #title {
+            font-family: 'Indie Flower', cursive;
+        }
+        
+        h3 {
+            font-family: 'Bellefair', serif;
+        }
+        
+        .slide-container {
+            overflow: auto;
+            white-space: nowrap
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center" id="title">Survey Question</h2>
+        <hr>
+        <h3>Name (Required)</h3>
+        <input class="form-control name" name="name" type="text">
+        <h3>Link to your photo (Required)</h3>
+        <input class="form-control link" type="text">
+        <hr>
+        <div class="slide-container">
+            <img style="width:20%;height:auto" src="/images/dog1.jpeg" />
+            <img style="width:20%;height:auto" src="/images/dog2.jpg" />
+            <img style="width:20%;height:auto" src="/images/dog3.jpg" />
+            <img style="width:20%;height:auto" src="/images/dog4.jpeg" />
+            <img style="width:20%;height:auto" src="/images/dog5.jpg" />
+            <img style="width:20%;height:auto" src="/images/dog6.jpg" />
+            <img style="width:20%;height:auto" src="/images/dog7.jpg" />
+        </div>
+        <h3>Question1</h3>
+        <!-- <div style=" clear: both;"></div> -->
+        <h4>woof-woof-woof?</h4>
+        <select class="chosen-select q1">
+                <option ></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question2</h3>
+        <h4>woof-woof-woof-woofwoof-woof?</h4>
+        <select class="chosen-select q2">
+                <option value></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question3</h3>
+        <h4>arf-arf-arf?</h4>
+        <select class="chosen-select q3">
+                <option value></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question4</h3>
+        <h4>bow-wow-bow-wow?</h4>
+        <select class="chosen-select q4">
+                <option value></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question5</h3>
+        <h4>ruff-ruff?</h4>
+        <select class="chosen-select q5">
+                <option value></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question6</h3>
+        <h4>yap-yap-yap-yap?</h4>
+        <select class="chosen-select q6">
+                <option value></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question7</h3>
+        <h4>woof-woof-woof-woof?</h4>
+        <select class="chosen-select q7">
+                <option value></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question8</h3>
+        <h4>woof-woof-woof-woof-woof-woof?</h4>
+        <select class="chosen-select q8">
+                <option value></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question9</h3>
+        <h4>woof-woof-woof-arf?</h4>
+        <select class="chosen-select q9">
+                <option value></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3>Question10</h3>
+        <h4>bow-wow-bow-wow-woof-woof-woof-woof?</h4>
+        <select class="chosen-select q10">
+                <option value></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true" style="margin-right:4px;"></i>Submit</button>
+        <hr>
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/users">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $("#submit").on("click", function(e) {
+            event.preventDefault(e);
+            var users = {
+                name: $(".name").val().trim(),
+                photo: $(".link").val().trim(),
+                scores: [
+                    parseInt($(".q1").val().trim()),
+                    parseInt($(".q2").val().trim()),
+                    parseInt($(".q3").val().trim()),
+                    parseInt($(".q4").val().trim()),
+                    parseInt($(".q5").val().trim()),
+                    parseInt($(".q6").val().trim()),
+                    parseInt($(".q7").val().trim()),
+                    parseInt($(".q8").val().trim()),
+                    parseInt($(".q9").val().trim()),
+                    parseInt($(".q10").val().trim())
+                ]
+            };
+            console.log(users)
+            $.post("/api/users", users).done(function(data) {
+                console.log(data);
+            })
+        })
+    </script>
+</body>
+
+</html>
