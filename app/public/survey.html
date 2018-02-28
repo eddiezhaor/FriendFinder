@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Bellefair">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -48,6 +49,7 @@
             <img style="width:20%;height:auto" src="/images/dog6.jpg" />
             <img style="width:20%;height:auto" src="/images/dog7.jpg" />
         </div>
+        <iframe id="vid" style="float:right; margin-top:100px;margin-right:80px;" width="560" height="315" src="https://www.youtube.com/embed/rD7tQ52dY44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <h3>Question1</h3>
         <!-- <div style=" clear: both;"></div> -->
         <h4>woof-woof-woof?</h4>
@@ -151,38 +153,89 @@
         </select>
         <br>
         <br>
+
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true" style="margin-right:4px;"></i>Submit</button>
         <hr>
         <footer class="footer">
             <div class="container">
-                <p><a href="/api/users">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+                <p><a href="/api/users">API Users Link</a> | <a href="https://github.com/eddiezhaor">GitHub Repo</a></p>
             </div>
         </footer>
     </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">WOW! IT IS A MATCH!!</h4>
+                </div>
+                <div class="modal-body" style="text-align:center">
+                    <img id="match" style="width:250px;height:auto" src="">
+                    <p id="target"></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="/"><button class="btn btn-primary " style="display:inline-block;margin-left:30%">Main Page</button></a>
+                    <a href="/survey"><button class="btn btn-primary "style="display:inline-block;">Retake the Survey!</button></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="load" style="display:none;">
+        <i class="fa fa-heartbeat fa-3x"><br><br><br><p style="color:black">PAIRING.........</p></i>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <script>
+        var imageLink = ["./images/dog1.jpeg", "./images/dog2.jpg", "./images/dog3.jpg", "./images/dog4.jpeg", "./images/dog5.jpg", "./images/dog6.jpg", "./images/dog7.jpg", "./images/dog8.jpg"]
+
         $("#submit").on("click", function(e) {
             event.preventDefault(e);
-            var users = {
-                name: $(".name").val().trim(),
-                photo: $(".link").val().trim(),
-                scores: [
-                    parseInt($(".q1").val().trim()),
-                    parseInt($(".q2").val().trim()),
-                    parseInt($(".q3").val().trim()),
-                    parseInt($(".q4").val().trim()),
-                    parseInt($(".q5").val().trim()),
-                    parseInt($(".q6").val().trim()),
-                    parseInt($(".q7").val().trim()),
-                    parseInt($(".q8").val().trim()),
-                    parseInt($(".q9").val().trim()),
-                    parseInt($(".q10").val().trim())
-                ]
-            };
-            console.log(users)
-            $.post("/api/users", users).done(function(data) {
-                console.log(data);
-            })
+
+            if ($("select").val() == "") {
+                alert("Please answer all the questions")
+            } else if ($(".name").val() == "" || $(".link").val() == "") {
+                alert("Please enter your name and profile link!")
+            } else {
+                $('iframe').attr('src', $('iframe').attr('src'));
+                $("#myModal").modal("hide")
+
+
+                var users = {
+                    name: $(".name").val().trim(),
+                    photo: $(".link").val().trim(),
+                    scores: [
+                        $(".q1").val().trim(),
+                        $(".q2").val().trim(),
+                        $(".q3").val().trim(),
+                        $(".q4").val().trim(),
+                        $(".q5").val().trim(),
+                        $(".q6").val().trim(),
+                        $(".q7").val().trim(),
+                        $(".q8").val().trim(),
+                        $(".q9").val().trim(),
+                        $(".q10").val().trim()
+                    ]
+                };
+
+                $.post("/api/users", users).done(function(data) {
+                    $("#target").text(data.name);
+                    $("#match").attr("src", imageLink[data.number])
+                })
+                $(".container").fadeOut(1000, function() {
+
+                    $(".load").fadeIn(1500, function() {
+                        $(".load").fadeOut(2000, function() {
+
+                            $("#myModal").modal("show");
+
+                        })
+                    })
+                })
+            }
         })
     </script>
 </body>

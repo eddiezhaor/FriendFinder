@@ -2,23 +2,6 @@ var users = [{
         name: "kitty",
         photo: "add later",
         scores: [
-            5,
-            1,
-            4,
-            4,
-            5,
-            1,
-            2,
-            5,
-            4,
-            1
-        ]
-    },
-    {
-
-        name: "Leio",
-        photo: "add later",
-        scores: [
             2,
             3,
             4,
@@ -29,6 +12,23 @@ var users = [{
             6,
             4,
             1
+        ]
+    },
+    {
+
+        name: "Leio",
+        photo: "add later",
+        scores: [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
         ]
     },
     {
@@ -47,7 +47,7 @@ var users = [{
             1,
             1
         ]
-    },
+    }
 ];
 
 module.exports = users;
