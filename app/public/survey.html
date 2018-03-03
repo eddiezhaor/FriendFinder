@@ -192,8 +192,8 @@
     <script>
         var imageLink = ["./images/dog1.jpeg", "./images/dog2.jpg", "./images/dog3.jpg", "./images/dog4.jpeg", "./images/dog5.jpg", "./images/dog6.jpg", "./images/dog7.jpg", "./images/dog8.jpg"]
 
-        $("#submit").on("click", function(e) {
-            event.preventDefault(e);
+        $("#submit").on("click", function(event) {
+            event.preventDefault();
 
             if ($("select").val() == "") {
                 alert("Please answer all the questions")
